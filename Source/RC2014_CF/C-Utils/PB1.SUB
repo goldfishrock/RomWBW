@@ -1,0 +1,43 @@
+NULU -O -WS4 <256 -X
+LU -O -WS4  -A 5/I:*.* -X
+NULU -O -UTILS <256 -X
+LU -O -UTILS -A 0/I:*.* -X
+NULU -O -KERMIT <256 -X
+LU -O -KERMIT -A 1/I:*.* -X     
+NULU -O -ASCOM <256 -X
+LU -O -ASCOM  -A 2/I:*.* -X  
+NULU -O -MAGICW <256 -X
+LU -O -MAGICW -A 3/I:*.* -X
+NULU -O -CPMHBK <256 -X
+LU -O -CPMHBK -A 4/I: -X
+NULU -O -PLI14 <256 -X
+LU -O -PLI14  -A 0/J:*.* -X
+NULU -O -TURBOP <256 -X
+LU -O -TURBOP -A 1/J:*.* -X     
+NULU -O -AZTEC-C <256 -X
+LU -O -AZTEC-C -A 2/J:*.* -X
+NULU -O -BDSC160 <256 -X
+LU -O -BDSC160 -A 3/J:*.* -X
+NULU -O -BASCOM <256 -X
+LU -O -BASCOM -A 4/J:*.* -X  
+NULU -O -BBCBAS <256 -X
+LU -O -BBCBAS -A 5/J:*.* -X
+NULU -O -HTC395B <256 -X
+LU -O -HTC395B -A 6/J:*.* -X     
+NULU -O -MTPLUS <256 -X
+LU -O -MTPLUS -A 7/J:*.* -X
+NULU -O -SLRTOOL <256 -X
+LU -O -SLRTOOL -A 8/J:*.* -X
+NULU -O -MBAS85 <256 -X
+LU -O -MBAS85 -A 9/J:*.* -X     
+NULU -O -ST-C80 <256 -X
+LU -O -ST-C80 -A 10/J:*.* -X   
+NULU -O -WHSC201 <256 -X
+LU -O -WHSC201 -A 11/J:*.* -X
+NULU -O -DBASE <256 -X
+LU -O -DBASE -A 0/K:*.* -X
+NULU -O -SC2 <256 -X
+LU -O -SC2 -A 1/K:*.* -X      
+NULU -O -MPLAN <256 -X
+LU -O -MPLAN -A 2/K:*.* -X
+

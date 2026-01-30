@@ -1,0 +1,58 @@
+                DOCUMENTATION FOR STAT30, Ver. 1
+               by David Krasner and Martin Murray
+                         (as of 4/9/84)
+
+     STAT30  is  an RSX (Resident System eXtension) designed  for 
+banked  memory  systems running CP/M Plus.   Its  purpose  is  to 
+correct  the  problem many CP/M 2.2 and earlier version  programs 
+have  when  running  under  CP/M  Plus  -- incorrect  free  space 
+remaining reports.   This problem is caused by the fact that when 
+a function call 27 is made to the BDOS, requesting the address of 
+the allocation vector, the BDOS returns pointing to an address in 
+Bank  0 (the first bank) of memory,  a bank that  is  essentially 
+inaccessible  to  programs running in the TPA.   The 2.2  program 
+continues to run, thinking it is actually analyzing the true ALV, 
+and produces erroneous results (153k free on a disk that you know 
+only has 2k free!).
+
+     Once loaded,  STAT30 remains in memory until a system reset.  
+It intercepts each call to the BDOS from the calling program, and 
+determines  if  the  call is a request for  the  address  of  the 
+allocation vector (27).  If not,  it passes the command on to the 
+BDOS (or the next RSX).   Otherwise,  it makes a call to the BDOS 
+asking  for  the number of free sectors remaining on the  default 
+disk (function call 46).  Finally, it creates a section of memory 
+designed  just  like CP/M's  allocation  vector,  indicating  the 
+proper  number of used and free blocks.   It then returns to  the 
+calling program pointing to this fake allocation vector.
+
+     Please  note:   if  your  program needs to  know  the  exact 
+location of the free/used blocks,  this RSX will only confuse it.  
+But  then,  that program probably cannot be run on a banked  CP/M 
+Plus system, anyway.
+
+     Most  programs tested have responded very favorably to  this 
+RSX  and  have produced accurate results.   However,  a  list  of 
+programs  that DO NOT benefit from the help that STAT30  provides 
+is below:
+
+     NCAT.COM
+
+If  anyone else picks up this documentation and  program,  please 
+add  any other programs known to not work with STAT30 to the list 
+above.   Hmmn...perhaps even a list of programs that it DOES work 
+with would be in order...
+
+     If you would like more information, please contact:
+
+                 David Krasner or Martin Murray
+
+                   Write:    SYSTEM SOLUTIONS
+                             P. O. Box 35972
+                             Dallas, Tx. 75235
+
+                   or Call:  (214) 351-6117
+               P. O. Box 35972
+                             Dallas, Tx. 75235
+
+                   or 

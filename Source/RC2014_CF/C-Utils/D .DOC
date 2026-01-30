@@ -1,0 +1,205 @@
+                  D -- A Z80 Directory Program
+
+
+     Ä ió á directorù prograí writteî foò CP/Í 2.ø anä above®  Iô 
+ió  designeä tï givå mosô oæ thå informatioî requireä bù á  user¬ 
+yeô stilì bå compact®  Iô waó originallù writteî foò CP/Í 3.° buô 
+haó beeî revampeä tï worë foò thå 2.ø versions¬ also.
+
+     Ä  supportó  manù optionó tï helğ thå useò obtaiî  jusô  thå 
+informatioî s/hå desires®  Iô wilì takå á littlå timå tï geô useä 
+tï  theså options¬  buô theù wilì becomå easieò tï uså anä  their 
+value and power will become more obvious as time goes on.
+
+
+     A summary of the options for D follows:
+
+
+          a -- get only archived files
+          b -- include system files
+          c -- comprehensive -- complete fcb info
+          f -- suppress filesize
+          g -- get from user # nn
+          n -- no form feed to printer
+          p -- going to the printer
+          r -- get only read-only files
+          s -- get only system files
+          u -- include all users
+          w -- get only r/w files
+          x -- do not sort the directory
+          z -- get only non-archived files
+
+Options are specified with a left bracket:
+
+          d b:[a    (or d b:[a] if you prefer) gets all the
+                    archived files from the current user #
+                    on drive b:.
+
+          d e:[g4   gets all the non-system files from user 4
+                    on e:.
+
+          d [sr     gets all the read-only system files from
+                    the current user of the default disk.
+
+          d foo.*   gets all non-system files named 'foo' from
+                    the current user of the default disk.
+
+.paŠ                       Option Explanations
+
+a -- get only archived files.  This filters for files with the
+     Archive bit set (The Archive attribute is a CP/M 3.0
+     feature.)  See the z option.
+
+b -- include system files.  Turns off the system file filter.
+     Allows BOTH system and non-system files to be displayed.
+     See the s option.
+
+c -- comprehensive.  Display the complete directory entry.
+     All matching directory entries are shown in their entirety.
+     Optionó noô compatablå witè thå ã optioî areº f,x.  The
+     directory is unsorted for this option.
+
+f -- suppress filesize.  Suppress the file size information.
+     Results in a more compact display.  Usually not used.
+
+g -- get from user # nn.  Specifies which user area to
+     interrogate.  Will not interrogate user 32.  Format is
+     gn or gnn: g2, g15, etc.  Incompatable with the u option.
+     A valuable option if you use user areas.
+
+n -- no form feed to printer.  If the p option is specified,
+     the leading form feed is suppressed.
+
+p -- going to the printer.  Sends the directory to the printer.
+     See the n option.
+
+r -- get only read-only files.  This filters for files that have
+     the RO attribute set.  See the w option.
+
+ó -- geô onlù systeí files®  Thió filteró ouô thå non-system
+     files and allows only system files to be displayed.  See
+     the b option.
+
+u -- include all users.  Searches all user areas for files.
+     Overrides the g option.
+
+w -- get only r/w files.  This filters for files that are not
+     read-only.  See the r option.
+
+x -- do not sort the directory.  The file display is not sorted.
+
+z -- get only non-archived files.  This filters for files that
+     do not have the Archive bit set.  See option a.
+
+
+.paŠ                            Features
+
+     Thå  directorù displaù ió fairlù obvious¬  buô á  fe÷  itemó 
+need explanation:
+
+          The default filter is "no system files".
+
+          Sort file entries is also a default.  Files, whether
+          sorted or unsorted are displayed in a columnar format.
+
+          Directorù entrieó displayeä iî aî alternatå (dim)
+          format are system entries.
+
+          The letter designating the file size can be 'k'
+          or 'r'.  The units are k (1024 bytes), but the
+          'r' is used to signify that the file is read-only.
+          The 'k' and the 'r' can also be displayed as a
+          'K' and an 'R'.  A capital 'K' or 'R' means that
+          the file has the Archive bit set.
+
+          Alphabetic characters in a directory name are
+          reverse-cased -- All caps become lower-case and
+          all lower-case become caps.
+
+          If a directory entry has a non-printable character
+          in it, that character is replaced by a '?'.
+
+          If the c option is invoked, any space characters
+          with the high-bit set (i.e. an attribute bit) are
+          replaced with an alternate format (dim) '*'.
+
+
+                     Special Considerations
+
+     Iæ yoõ owî CP/Í 3.0¬ yoõ maù havå noticeä thaô single-letteò 
+prograí  nameó  followeä bù thå namå oæ á filå  oî  anotheò  disë 
+confuseó thå CCP®  Sï iæ yoõ typå (froí thå prompt© A:>ä b:*.bar¬ 
+thå CCĞ can'ô finä D®   Thió ió á buç iî thå CCP®   É fixeä iô iî 
+mine¬  buô  thå solutioî ió toï compleø foò á simplå fix¬  anä  É 
+woulä havå troublå gettinç arounä DRÉ iî providinç á legaì fiø tï 
+it¬  sï É recommenä renaminç single-letteò programó runninç undeò 
+CP/M 3.0 to something else -- like DD.COM for D.COM.
+
+     Bå  cautiouó wheî thå disë iî questioî ió seô tï  read-only®  
+Incrediblù spuriouó resultó caî occur¬ especiallù undeò CP/Í 3.0®  
+É coulä havå reseô thå disë iæ iô waó read-only¬  buô foò variouó 
+reasonó  É diä not®   Sï wheî yoõ seå thå -- Disë ió Reaä Onlù -- 
+message, treat the D results with a grain of salt.
+.paŠ     CP/Í  3.°  supportó  disë  labels®   Theså  arå  actuallù  á 
+directorù entrù undeò useò 32®   Ä lookó foò á useò 3² entry¬ anä 
+iæ  iô findó one¬  iô ió listeä aó thå disë namå jusô  afteò  thå 
+user/drivå callout®   Otherwise¬ useò 3² ió noô availablå undeò Ä 
+iî anù otheò circumstatnces®   Iæ useró oæ CP/Í 2.ø desirå labeló 
+oî theiò disks¬ theù musô finä á waù tï instalì á directorù labeì 
+entrù  iî  useò 32®   Anù disë utility¬  sucè aó DUÕ oò  POWER(r© 
+coulä  bå  useä tï dï thió bù modifyinç á 0ë directorù  entrù  tï 
+user 32.  Please!! Experienced users only should try this!
+
+
+                          Installation
+
+     Ä  useó aî alternatå formaô foò somå displays®   Usuallù thå 
+alternatå formaô ió dií video®   Oæ course¬  somå terminaló don'ô 
+supporô dií video¬  buô dï supporô reverså video¬  foò  instance®  
+Iî  thió case¬  thå alternatå formaô woulä bå reverså  video®   Ä 
+comeó witè dií videï seô foò thå TeleVideï 925/950¬  oò anù otheò 
+terminaì thaô useó thå samå codes¬ oæ course®  Tï instalì anotheò 
+codå  strinç seô foò aî alternatå formaô foò youò system¬  iô  ió 
+necessarù  tï alteò D.COÍ witè á debuggeò sucè aó DDÔ oò  SIÄ  oò 
+ZSID®
+
+Load D.COM under your debugger:  DDT D.COM
+
+The string to change TO the alternate format is located at 118.
+
+Thå strinç tï changå FROÍ thå alternatå formaô bacë tï thå normaì 
+format is located at 128.
+
+Do a D100 and the setup will be obvious.
+
+Changå  thå stringó aó requireä tï supporô aî alternatå formaô oî 
+youò terminal®   Terminatå thå stringó witè á NULÌ (00)®  Iæ youò 
+terminaì  doesn'ô supporô aî alternatå format¬  NULÌ thå  stringó 
+out entirely (not the alpha locator strings, though).
+
+After changing the strings, SAVE the new file to your disk:
+
+	CP/M 2.x is SAVE 14 D.COM
+
+	CP/M 3.x users will save from 100 to e7f to DD.COM
+
+The actual method of saving is system/debugger dependant.
+
+.paŠ                        Legal Mumbo-Jumbo
+
+	D.COÍ ió Copyrighô (c© 198´ Sourcå Maverick®  Yoõ maù uså 
+D.COÍ  foò  youò  owî purposeó otheò thaî sellinç  it®   Yoõ  maù 
+distributå iô aó yoõ wish¬  aó lonç aó yoõ dï noô chargå foò  thå 
+program®  D.COÍ maù bå distributeä oî á disë witè otheò programs¬ 
+foò  whicè therå ió á copù chargå ONLÙ associateä witè thå  disk®  
+Thå copù chargå maù noô exceeä UÓ $2.0° iî 198´ dollars¬ however®  
+Thå  authoò  assumeó  nï  liabilitù whatsoeveò  witè  respecô  tï 
+anotheò party'ó usagå oæ D.COM¬ youò acceptancå oæ thió statemenô 
+beinç á prerequisitå tï saiä party'ó uså oæ thå program®   (Afteò 
+all¬ yoõ goô iô foò free.)
+
+
+                                   Hank Blake
+                                   Source Maverick
+                                   San Diego, Ca.
+

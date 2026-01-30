@@ -1,0 +1,23 @@
+PIP I:[G5]=-WS4
+PIP I:[G0]=-UTILS
+PIP I:[G1]=-KERMIT
+PIP I:[G2]=-ASCOM
+PIP I:[G3]=-MAGICW
+PIP I:[G4]=-CPMHBK
+PIP J:[G0]=-PLI14
+PIP J:[G1]=-TURBOP
+PIP J:[G2]=-AZTEC-C
+PIP J:[G3]=-BDSC160
+PIP J:[G4]=-BASCOM
+PIP J:[G5]=-BBCBAS
+PIP J:[G6]=-HTC395B
+PIP J:[G7]=-MTPLUS
+PIP J:[G8]=-SLRTOOL
+PIP J:[G9]=-MBAS85
+PIP J:[G10]=-ST-C80
+PIP J:[G11]=-WHSC201
+PIP K:[G0]=-DBASE
+PIP K:[G1]=-SC2
+PIP K:[G2]=-MPLAN
+
+

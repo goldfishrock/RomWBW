@@ -1,0 +1,12 @@
+setdef *,a:,i:,c: [temporary=a:]
+setdef [display]
+setdef [uk]
+show 
+assign k:=sd0:8
+assign l:=sd0:9
+assign m:=sd0:10
+assign n:=sd0:11
+assign o:=sd0:12
+assign p:=sd0:13
+vt100dyn
+

@@ -1,0 +1,18 @@
+ Volume in drive T is Development
+ Volume Serial Number is C694-C9DB
+
+ Directory of T:\Z80\Project\RomWBW\Tools\RC2014_CF
+
+16/01/2026  15:19    <DIR>          .
+16/01/2026  09:58    <DIR>          ..
+16/01/2026  10:08    <DIR>          C-Utils
+16/01/2026  09:59    <DIR>          D-Working
+16/01/2026  15:18    <DIR>          E-Basic
+16/01/2026  15:13    <DIR>          F-ASM
+16/01/2026  15:13    <DIR>          G-C
+16/01/2026  15:11    <DIR>          H-Cobol
+16/01/2026  15:12    <DIR>          I-Pascal
+16/01/2026  15:07    <DIR>          Z-Games
+               1 File(s)            128 bytes
+              10 Dir(s)  3,997,116,219,392 bytes free
+
